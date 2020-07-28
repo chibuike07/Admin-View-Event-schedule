@@ -1,0 +1,92 @@
+.header {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(123, 75, 135, 0.8),
+      rgba(123, 75, 135, 0.8)
+    ),
+    url("../../Assests/manageEvent2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: inherit;
+  width: 50%;
+}
+.strong {
+  z-index: 3;
+}
+.params {
+  padding: 3%;
+  font-size: x-large;
+  color: #fff;
+  text-transform: capitalize;
+  z-index: 5;
+}
+.clip_path {
+  content: "";
+  position: absolute;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+  background-color: rgb(74, 199, 237);
+  top: 15%;
+  left: 0;
+  width: 120%;
+  height: 300px;
+  clip-path: polygon(0 29%, 100% 30%, 85% 60%, 0 60%);
+  transform: skewY(-0.4deg);
+  color: #000000;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  overflow-x: scroll;
+}
+.nav {
+  height: inherit;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.add_post,
+.view_post {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  border: 2px solid rgb(74, 199, 237);
+  padding: 10px;
+}
+
+.add_post {
+  transition: border-radius 3s, padding 3s ease-in-out;
+  background-color: rgb(74, 199, 237);
+}
+
+.add_post:hover {
+  border-radius: 20px;
+  padding: 5px;
+  filter: drop-shadow(10px 20px 24px #000);
+}
+
+.view_post {
+  transition: border-radius 3s ease-in-out;
+}
+
+.view_post:hover {
+  border-radius: 20px;
+  filter: drop-shadow(10px 20px 24px #000);
+}

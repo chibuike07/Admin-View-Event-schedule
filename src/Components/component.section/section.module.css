@@ -1,0 +1,27 @@
+.section {
+  display: none;
+  width: 100%;
+  height: 300px;
+  flex-direction: column;
+}
+
+.div_wrapper {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: max-content;
+  padding: 10px;
+}
+
+.div_img img {
+  width: 50%;
+  height: 200px;
+  clip-path: circle(40%);
+}
+
+.div_text {
+  display: flex;
+  flex-direction: column;
+  color: yellow;
+}
