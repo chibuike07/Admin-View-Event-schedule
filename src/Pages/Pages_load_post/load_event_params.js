@@ -28,7 +28,9 @@ const Load_event_params = ({ match }) => {
         <div className={div_text}>
           <h2>{EventData.title}</h2>
           <em>
-            {EventData.date} {EventData.time}
+            {new Date(EventData.date).toDateString()}
+            {"\n"}
+            {EventData.time}
           </em>
           <p>{EventData.description}</p>
         </div>

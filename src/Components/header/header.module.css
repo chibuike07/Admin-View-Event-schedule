@@ -98,5 +98,7 @@
 
 .view_post:hover {
   border-radius: 20px;
+  background-color: rgb(74, 199, 237);
+
   filter: drop-shadow(10px 20px 24px #000);
 }
