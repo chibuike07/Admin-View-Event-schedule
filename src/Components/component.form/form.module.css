@@ -1,7 +1,17 @@
+.form_wrapper {
+  width: inherit;
+  height: 20rem;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .form {
-  width: 100%;
+  width: 30%;
   height: 15rem;
   padding: 10px;
+  grid-gap: 20px;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
@@ -10,7 +20,7 @@
 }
 
 .title,
-.textarea {
+.description {
   transform: translate(-30%);
   width: 20rem;
   height: 40px;
@@ -25,17 +35,18 @@
 ::placeholder {
   color: #fff;
 }
-
 .label {
   color: #fff;
   filter: drop-shadow(10px 20px 13px #000);
 }
-
+.file {
+  display: none;
+}
 .button {
   transform: translate(-30%);
   height: 40px;
   border-radius: 10px;
-  background-color: rgb(82, 121, 133);
+  background-color: rgb(74, 199, 237);
   color: #fff;
   font-size: 16px;
   text-transform: capitalize;

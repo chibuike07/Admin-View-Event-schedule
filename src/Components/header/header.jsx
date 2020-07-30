@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from "./header.module.css";
 import { Link } from "react-router-dom";
-const header = () => {
+const header = ({ viewEvent, addEvent }) => {
   const {
     header,
     aside,
@@ -15,13 +15,12 @@ const header = () => {
     view_post,
   } = Styles;
 
-  const addEvent = () => {};
   return (
     <div>
       <header className={header}>
         <aside className={aside}>
-          <div className={clip_path}></div>
           <strong className={strong}>event management apps</strong>
+          <div className={clip_path}></div>
           <p className={params}>
             let work towards a global connection with every one
           </p>
@@ -30,10 +29,10 @@ const header = () => {
           </div>
         </aside>
         <nav className={nav}>
-          <Link to="" className={add_post}>
+          <Link to="" onClick={addEvent} className={add_post}>
             add post
           </Link>
-          <Link to="" className={view_post}>
+          <Link to="" onClick={viewEvent} className={view_post}>
             view post
           </Link>
         </nav>

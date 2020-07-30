@@ -27,6 +27,16 @@
 }
 .strong {
   z-index: 3;
+  color: #fff;
+  width: 40%;
+  text-transform: uppercase;
+  transition: width 2s, transform 2s ease-in;
+  /* background-color: red; */
+  text-align: center;
+}
+.strong:hover {
+  width: 50%;
+  transform: translate(52%, 30%);
 }
 .params {
   padding: 3%;

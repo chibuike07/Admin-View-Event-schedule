@@ -12,6 +12,7 @@
   flex-direction: column;
   height: max-content;
   padding: 10px;
+  cursor: pointer;
 }
 
 .div_img img {
