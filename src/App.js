@@ -1,9 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import logo from "./logo.svg";
-// import "./App.css";
 import Event from "./Pages/Pages_event/event.jsx";
-import LoadEvent from "./Pages/Pages_load_post/load_event_params";
+import LoadEvent from "./Pages/Pages_load_post/load_event_params.jsx";
 function App() {
   return (
     <div className="App">
