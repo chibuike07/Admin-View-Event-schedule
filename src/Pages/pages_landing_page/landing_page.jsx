@@ -1,8 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUsers,
+  faUserAlt,
+  faCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
 import CustomButton from "../../Components/component_button/Button";
 import CustomNavLink from "../../Components/component_navlinks/NavLink";
+import CustomImage from "../../Components/component_image/Image";
+import Image from "../../Assests/manageEvent.jpeg";
 import Styles from "./landing_page.module.css";
 const Landing_page = () => {
   const {
@@ -22,6 +29,11 @@ const Landing_page = () => {
     button,
     highlight,
     btn,
+    main,
+    main_session,
+    previous,
+    top_event,
+    event_highlight,
   } = Styles;
   return (
     <div className={container}>
@@ -88,6 +100,27 @@ const Landing_page = () => {
           </div>
         </section>
       </header>
+      <main className={main}>
+        <section className={main_session}>
+          <fieldset className={previous}>
+            <legend>previous event</legend>
+            <CustomImage src={Image} alt={"circle image"} />
+            <p>this holds the event last event that was held on the platform</p>
+          </fieldset>
+
+          <fieldset className={top_event}>
+            <legend>top event</legend>
+            <CustomImage src={Image} alt={"top event image"} />
+            <p>this holds the event last event that was held on the platform</p>
+          </fieldset>
+
+          <fieldset className={event_highlight}>
+            <legend>events highlight</legend>
+            <CustomImage src={Image} alt={"event highlight"} />
+            <p>this holds the event last event that was held on the platform</p>
+          </fieldset>
+        </section>
+      </main>
     </div>
   );
 };

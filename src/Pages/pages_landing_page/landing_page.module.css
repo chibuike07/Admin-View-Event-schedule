@@ -1,11 +1,19 @@
 .container {
   width: 100%;
-  height: 80vh;
+  height: 200vh;
+  background-image: linear-gradient(
+      to left bottom,
+      rgba(102, 178, 178, 0.9),
+      rgba(0, 20, 30, 9)
+    ),
+    url("../../Assests/manageEvent.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .header {
   width: 100%;
   height: 80vh;
-  background-color: rgb(102, 178, 178);
+  background-attachment: fixed;
 }
 
 .toparea {
@@ -18,23 +26,29 @@
 }
 
 .left_wrapper {
-  height: inherit;
-  margin-left: 3%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-basis: 15%;
+}
+.icon {
+  padding-left: 3%;
+}
+.text {
+  padding-left: 3%;
+  width: max-content;
 }
 .text p {
   color: #fff;
   text-transform: capitalize;
 }
 .navbar {
-  height: inherit;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-basis: 60%;
+  height: 100%;
 }
 
 .section {
@@ -97,4 +111,36 @@
   border: none;
   border-radius: 7px;
   text-transform: capitalize;
+}
+
+.main {
+  /* background-color: red; */
+  height: 80%;
+}
+
+.main_session {
+  /* background-color: green; */
+  display: flex;
+  height: 70%;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.previous {
+  flex: 0.2;
+  color: #fff;
+  border-color: red;
+  text-transform: capitalize;
+}
+.top_event {
+  flex: 0.2;
+  color: #fff;
+  text-transform: capitalize;
+  border-color: rgb(0, 102, 102);
+}
+.event_highlight {
+  color: #fff;
+  flex: 0.2;
+  text-transform: capitalize;
+  border-color: rgb(0, 102, 102);
 }
