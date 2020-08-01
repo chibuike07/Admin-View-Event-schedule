@@ -4,23 +4,51 @@ import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import CustomNavLink from "../../Components/component_navlinks/NavLink";
 import Styles from "./landing_page.module.css";
 const Landing_page = () => {
-  const { container, header, left_wrapper, icon, navbar, text } = Styles;
+  const {
+    container,
+    header,
+    toparea,
+    left_wrapper,
+    icon,
+    navbar,
+    text,
+  } = Styles;
   return (
     <div className={container}>
       <header className={header}>
-        <div className={left_wrapper}>
-          <div className={icon}>
-            <FontAwesomeIcon icon={faUsers} />
+        <div className={toparea}>
+          <div className={left_wrapper}>
+            <div className={icon}>
+              <FontAwesomeIcon icon={faUsers} size="2x" color="#fff" />
+            </div>
+            <div className={text}>
+              <p>group chat</p>
+            </div>
           </div>
-          <div className={text}>
-            <p>group chat</p>
-          </div>
+          <nav className={navbar}>
+            <CustomNavLink
+              text={"home"}
+              url={"/"}
+              color={"#fff"}
+              textDecoration={"none"}
+              textTransform={"uppercase"}
+            />
+            <CustomNavLink
+              text={"contact"}
+              url={"/"}
+              color={"#fff"}
+              textDecoration={"none"}
+              textTransform={"uppercase"}
+            />
+            <CustomNavLink
+              text={"chat"}
+              url={"/"}
+              color={"#fff"}
+              textDecoration={"none"}
+              textTransform={"uppercase"}
+            />
+          </nav>
         </div>
-        <nav className={navbar}>
-          <CustomNavLink text={"home"} url={"/"} color={"blue"} />
-          <CustomNavLink text={"contact"} url={"/"} color={"blue"} />
-          <CustomNavLink text={"chat"} url={"/"} color={"blue"} />
-        </nav>
       </header>
     </div>
   );
