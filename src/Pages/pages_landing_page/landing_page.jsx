@@ -1,10 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUsers,
-  faUserAlt,
-  faCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUsers, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 
 import CustomButton from "../../Components/component_button/Button";
 import CustomNavLink from "../../Components/component_navlinks/NavLink";
@@ -31,10 +27,32 @@ const Landing_page = () => {
     btn,
     main,
     main_session,
+    marguee1,
+    marguee2,
+    marguee3,
     previous,
     top_event,
     event_highlight,
   } = Styles;
+  const prevEvent = useRef();
+  const topEvent = useRef();
+  const eventHight = useRef();
+  useEffect(() => {
+    const onScroll = (e) => {
+      if (e.target.documentElement.scrollTop > 500) {
+        prevEvent.current.children[1].children[0].style.transform =
+          "translate(0%, 0%)";
+        topEvent.current.children[1].children[0].style.transform =
+          "translate(0%, 0%)";
+        eventHight.current.children[1].children[0].style.transform =
+          "translate(0%, 0%)";
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   return (
     <div className={container}>
       <header className={header}>
@@ -102,21 +120,33 @@ const Landing_page = () => {
       </header>
       <main className={main}>
         <section className={main_session}>
-          <fieldset className={previous}>
+          <fieldset className={previous} ref={prevEvent}>
             <legend>previous event</legend>
-            <CustomImage src={Image} alt={"circle image"} />
+            <CustomImage
+              src={Image}
+              alt={"circle image"}
+              className={marguee1}
+            />
             <p>this holds the event last event that was held on the platform</p>
           </fieldset>
 
-          <fieldset className={top_event}>
+          <fieldset className={top_event} ref={topEvent}>
             <legend>top event</legend>
-            <CustomImage src={Image} alt={"top event image"} />
+            <CustomImage
+              src={Image}
+              alt={"top event image"}
+              className={marguee2}
+            />
             <p>this holds the event last event that was held on the platform</p>
           </fieldset>
 
-          <fieldset className={event_highlight}>
+          <fieldset className={event_highlight} ref={eventHight}>
             <legend>events highlight</legend>
-            <CustomImage src={Image} alt={"event highlight"} />
+            <CustomImage
+              src={Image}
+              alt={"event highlight"}
+              className={marguee3}
+            />
             <p>this holds the event last event that was held on the platform</p>
           </fieldset>
         </section>

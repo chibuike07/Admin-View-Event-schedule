@@ -18,6 +18,7 @@ const Image = ({
   zIndex,
   id,
   type,
+  ref,
 }) => {
   const { custom_image, custom_image_wrapper } = ImageStyles;
   return (
@@ -42,6 +43,7 @@ const Image = ({
         onClick={onclick ? onclick : null}
         id={id ? id : null}
         type={type ? type : null}
+        ref={ref ? ref : null}
       />
     </div>
   );
