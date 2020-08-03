@@ -1,3 +1,11 @@
+* {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  image-rendering: optimizeQuality;
+  text-rendering: optimizeLegibility;
+}
 .container {
   width: 100%;
   height: 200vh;
@@ -22,7 +30,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .left_wrapper {
@@ -60,6 +67,7 @@
   height: inherit;
   width: inherit;
   margin-left: 5%;
+  line-height: 2;
 }
 .heading h4 {
   opacity: 0.3;
@@ -80,7 +88,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .section_icon {
@@ -120,7 +127,7 @@
 .main_session {
   background-color: rgb(102, 178, 178);
   display: flex;
-  height: 70%;
+  height: 60%;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -149,6 +156,8 @@
   border-color: red;
   text-transform: capitalize;
   position: relative;
+  padding: 1%;
+  line-height: 1.5;
 }
 .top_event legend {
   color: rgb(0, 102, 102);
@@ -158,6 +167,8 @@
   color: #fff;
   text-transform: capitalize;
   border-color: rgb(0, 102, 102);
+  padding: 1%;
+  line-height: 1.5;
 }
 
 .event_highlight {
@@ -165,4 +176,50 @@
   flex: 0.2;
   text-transform: capitalize;
   border-color: rgb(0, 102, 102);
+  padding: 1%;
+  line-height: 1.5;
+}
+
+.showcase {
+  /* background-color: red; */
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  background-color: rgb(0, 128, 128);
+}
+
+.showcase_image {
+  margin-top: 0%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+  height: 200px;
+  top: 10%;
+  left: -5%;
+}
+.phone_image {
+  width: 200%;
+  border: 3px solid rgb(0, 102, 102);
+  border-radius: 20px;
+}
+
+.showcase_aside {
+  width: 40%;
+
+  padding: 2%;
+  line-height: 2;
+}
+
+.showcase_aside h3 {
+  color: #fff;
+}
+
+.symbols {
+  width: 33.3%;
+  display: flex;
+  justify-content: flex-end;
 }

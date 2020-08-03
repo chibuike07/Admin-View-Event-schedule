@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUsers,
+  faUserAlt,
+  faSpinner,
+  faPlayCircle,
+  faCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 import CustomButton from "../../Components/component_button/Button";
 import CustomNavLink from "../../Components/component_navlinks/NavLink";
 import CustomImage from "../../Components/component_image/Image";
+import CustomInput from "../../Components/component_input/Input";
 import Image from "../../Assests/manageEvent.jpeg";
+import PhoneImage from "../../Assests/oie_jpg.png";
 import Styles from "./landing_page.module.css";
 const Landing_page = () => {
   const {
@@ -33,10 +41,18 @@ const Landing_page = () => {
     previous,
     top_event,
     event_highlight,
+    showcase,
+    showcase_image,
+    play_store,
+    apple_store,
+    phone_image,
+    showcase_aside,
+    symbols,
   } = Styles;
   const prevEvent = useRef();
   const topEvent = useRef();
   const eventHight = useRef();
+  const [state, setState] = useState("none");
   useEffect(() => {
     const onScroll = (e) => {
       if (e.target.documentElement.scrollTop > 500) {
@@ -149,6 +165,49 @@ const Landing_page = () => {
             />
             <p>this holds the event last event that was held on the platform</p>
           </fieldset>
+        </section>
+        <section className={showcase}>
+          <figure className={showcase_image}>
+            <CustomImage
+              src={PhoneImage}
+              alt={"phone image"}
+              className={phone_image}
+            />
+          </figure>
+          <aside className={showcase_aside}>
+            <h3>
+              schedule chats, schedule personal event/task and chat with your
+              organization easily
+            </h3>
+
+            <p>
+              we keep the world connect with organization events. You may also
+              want to save task and event...
+              <br /> All in one platform!!!
+            </p>
+
+            <CustomInput
+              type={"button"}
+              value={"play store"}
+              name={"play store"}
+              className={play_store}
+            />
+            <CustomInput
+              type={"button"}
+              value={"apple store"}
+              name={"apple store"}
+              className={apple_store}
+            />
+          </aside>
+          <figure className={symbols}>
+            <FontAwesomeIcon icon={faSpinner} size="3x" spin color="#fff" />
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="7x"
+              style={{ clipPath: "circle(50.6% at 90% 50%)" }}
+              spin
+            />
+          </figure>
         </section>
       </main>
     </div>
