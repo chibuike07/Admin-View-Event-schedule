@@ -1,0 +1,56 @@
+.main_session {
+  background-color: rgb(102, 178, 178);
+  display: flex;
+  height: 60%;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.marguee1 {
+  transform: translate(0%, 50%);
+  transition: transform 3s;
+}
+.marguee2 {
+  transform: translate(0%, 50%);
+  transition: transform 3s;
+}
+.marguee3 {
+  transform: translate(0%, 50%);
+  transition: transform 3s;
+}
+
+.style {
+  color: green;
+  transform: translate(50%, 50%);
+}
+
+.previous {
+  flex: 0.2;
+  color: #fff;
+  border-color: red;
+  text-transform: capitalize;
+  position: relative;
+  padding: 1%;
+  line-height: 1.5;
+}
+.top_event legend {
+  color: rgb(0, 102, 102);
+}
+.top_event {
+  flex: 0.2;
+  color: #fff;
+  text-transform: capitalize;
+  border-color: rgb(0, 102, 102);
+  padding: 1%;
+  line-height: 1.5;
+}
+
+.event_highlight {
+  color: #fff;
+  flex: 0.2;
+  text-transform: capitalize;
+  border-color: rgb(0, 102, 102);
+  padding: 1%;
+  line-height: 1.5;
+}

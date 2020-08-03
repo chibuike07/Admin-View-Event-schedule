@@ -1,0 +1,89 @@
+.showcase {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  transform: translate(0%, 50%);
+  transition: transform 2s;
+  background-color: rgb(0, 128, 128);
+}
+
+.showcase_image {
+  margin-top: 0%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 200px;
+  top: 10%;
+  left: -5%;
+}
+.phone_image {
+  width: 200%;
+  border: 3px solid rgb(0, 102, 102);
+  border-radius: 20px;
+}
+
+.showcase_aside {
+  width: 40%;
+  padding: 2%;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showcase_aside h3 {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.store_wrapper {
+  display: flex;
+  margin-top: 3%;
+}
+.play_store {
+  padding: 2%;
+  width: 30%;
+}
+
+.play_wrapper {
+  border: 2px solid #000;
+  width: 100%;
+  display: flex;
+  background-color: #000;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 7px;
+  padding: 2%;
+}
+
+.faplays {
+  color: seagreen;
+  padding-right: 2%;
+  margin-right: 5%;
+}
+
+.play_wrapper figure {
+  display: flex;
+  justify-content: center;
+}
+
+.play_wrapper figcaption {
+  font-weight: lighter;
+}
+.play_wrapper span {
+  text-transform: capitalize;
+  font-size: small;
+}
+.apple_store {
+  padding: 2%;
+  width: 30%;
+}
+.symbols {
+  width: 30.3%;
+  display: flex;
+  justify-content: flex-end;
+}
