@@ -6,7 +6,7 @@
       rgba(102, 178, 178, 0.9),
       rgba(0, 20, 30, 9)
     ),
-    url("../../Assests/manageEvent2.jpeg");
+    url("../../Assests/manageEvent.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -56,6 +56,17 @@
   width: inherit;
   margin-left: 5%;
   line-height: 2;
+  animation: show 2s ease-in;
+}
+@keyframes show {
+  from {
+    transform: translate(0%, 20%);
+    display: flex;
+  }
+  to {
+    transform: translate(0%, 0%);
+    display: block;
+  }
 }
 .heading h4 {
   opacity: 0.3;

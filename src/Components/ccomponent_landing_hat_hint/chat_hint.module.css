@@ -1,0 +1,143 @@
+.chat_hint {
+  width: 100%;
+  height: 25%;
+  margin-top: 10%;
+  position: relative;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+}
+.heading h2 {
+  padding-top: 2%;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.chat_view {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.preview {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+
+.wrapOne {
+  background-color: #ccc;
+  width: 50%;
+  height: 4em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: drop-shadow(10px 10px 10px);
+  opacity: 0.3;
+  transform: translate(60%);
+}
+.illus_icon {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+.illus_cont {
+  height: inherit;
+  transform: translate(-5%);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.divOne {
+  background-color: rgb(0, 128, 128);
+  width: 70%;
+  height: 10%;
+}
+.secdiv {
+  background-color: rgb(0, 128, 128);
+  width: 30%;
+  height: 10%;
+  margin-top: 2%;
+}
+
+.wrapTwo {
+  background-color: rgb(0, 102, 102);
+  width: 50%;
+  height: 4em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: drop-shadow(10px 10px 10px);
+  transform: translate(60%);
+  transition: transform 3s;
+  margin-top: 10px;
+}
+.wrapTwo .divOne {
+  background-color: #fff;
+}
+.wrapTwo .secdiv {
+  background-color: #fff;
+}
+
+.wrapThree {
+  background-color: #ccc;
+  width: 50%;
+  height: 4em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: drop-shadow(10px 10px 10px);
+  opacity: 0.3;
+  transform: translate(60%);
+  margin-top: 10px;
+}
+.wrapThree .divOne {
+  background-color: rgb(200, 108, 124);
+}
+.wrapThree .secdiv {
+  background-color: rgb(200, 108, 124);
+}
+
+.aside {
+  width: 50%;
+  position: relative;
+  height: 25em;
+  background-image: repeating-radial-gradient(
+      rgba(0, 128, 128, 0.7),
+      rgba(0, 76, 76, 0.3)
+    ),
+    url("../../Assests/cartoon3.jpeg");
+  background-size: cover;
+  background-position: 100% 100% 20% 40%;
+  background-blend-mode: darken;
+  background-color: rgba(0, 128, 128, 0.7);
+}
+
+.human_display {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartoon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 60%;
+  height: inherit;
+  transition: transform 3s;
+  /* z-index: 1; */
+}

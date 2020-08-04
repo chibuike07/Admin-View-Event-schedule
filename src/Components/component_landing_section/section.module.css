@@ -1,7 +1,6 @@
 .main_session {
-  background-color: rgb(102, 178, 178);
   display: flex;
-  height: 60%;
+  height: 30%;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;

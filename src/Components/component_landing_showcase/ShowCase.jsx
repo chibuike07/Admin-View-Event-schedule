@@ -103,8 +103,6 @@ const ShowCase = ({ showCaseTransition }) => {
             position: "relative",
             right: "2%",
           }}
-          // spin
-
           color="#004c4c"
         />
       </figure>
