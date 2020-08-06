@@ -1,0 +1,157 @@
+.wrapper {
+  width: 100%;
+  height: 20em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 10%;
+  background-color: rgb(0, 128, 128);
+}
+
+.figure {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.figure .first {
+  position: absolute;
+  width: 15%;
+  height: 150px;
+  top: -20%;
+  left: 10%;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 3s ease-in;
+  clip-path: polygon(
+    50% 0%,
+    80% 10%,
+    100% 35%,
+    100% 58%,
+    88% 86%,
+    50% 100%,
+    0 94%,
+    22% 83%,
+    0 40%,
+    20% 10%
+  );
+}
+
+.figure .second {
+  width: 50%;
+  height: 100px;
+  transform: translate(100%, 30%);
+  opacity: 0;
+  transition: opacity 3s ease-in;
+  clip-path: polygon(
+    50% 0%,
+    80% 10%,
+    100% 35%,
+    83% 81%,
+    100% 91%,
+    50% 100%,
+    20% 90%,
+    0% 70%,
+    0% 35%,
+    20% 10%
+  );
+}
+
+.figure .third {
+  width: 10%;
+  height: 100px;
+  transform: rotateY(200deg);
+  position: absolute;
+  top: -1%;
+  left: 35%;
+  opacity: 0;
+  transition: opacity 3s ease-in;
+  clip-path: polygon(
+    50% 0%,
+    83% 12%,
+    97% 48%,
+    76% 83%,
+    88% 100%,
+    56% 91%,
+    35% 78%,
+    6% 48%,
+    17% 12%
+  );
+}
+
+.figure .four {
+  width: 40%;
+  transform: translate(10vw, 2vh);
+  opacity: 0;
+  transition: opacity 3s ease-in;
+
+  clip-path: polygon(
+    50% 0%,
+    80% 10%,
+    100% 35%,
+    83% 81%,
+    100% 91%,
+    50% 100%,
+    20% 90%,
+    0% 70%,
+    0% 35%,
+    20% 10%
+  );
+}
+.figure .five {
+  width: 70%;
+  height: 100px;
+  transform: translate(-10vw, 20vh);
+  opacity: 0;
+  transition: opacity 3s ease-in;
+
+  clip-path: polygon(
+    38% 0,
+    80% 10%,
+    100% 35%,
+    95% 70%,
+    61% 89%,
+    24% 88%,
+    4% 100%,
+    12% 81%,
+    0 65%,
+    0 18%
+  );
+}
+
+.aside {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 2;
+  opacity: 0;
+  transition: opacity 3s ease-in;
+}
+.emphasis {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.param {
+  width: 55%;
+  font-size: small;
+}
+.button_wrapper {
+  margin-top: 20px;
+  background-color: yellow;
+  width: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 12em;
+  height: 3em;
+  border: none;
+  text-transform: capitalize;
+}
