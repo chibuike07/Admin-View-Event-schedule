@@ -5,6 +5,7 @@ import SectionView from "../../Components/component_landing_section/section";
 import ShowCase from "../../Components/component_landing_showcase/ShowCase";
 import ChatHint from "../../Components/ccomponent_landing_hat_hint/Chat_hint";
 import Accomodation from "../../Components/component_accomodation/Accomodation";
+import Contact from "../../Components/components_landing_contact/contact";
 
 const Landing_page = () => {
   const { container, main } = Styles;
@@ -102,6 +103,7 @@ const Landing_page = () => {
           cartoonOne={cartoonOne}
           AccomodationText={AccomodationText}
         />
+        <Contact />
       </main>
     </div>
   );

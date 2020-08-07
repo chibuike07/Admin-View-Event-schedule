@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-// export const InputRefs = ({ textInput }) => console.log(textInput.current);
+import React from "react";
+
 const Input = ({
   name,
   list,
@@ -28,9 +28,6 @@ const Input = ({
   readOnly,
   onInput,
 }) => {
-  const textInput = useRef(null);
-  // InputRefs({ textInput });
-  // console.log(textInput);
   return (
     <input
       style={{
@@ -48,14 +45,14 @@ const Input = ({
       }}
       type={type ? type : "text"}
       list={list ? list : null}
-      placeholder={placeholder}
+      placeholder={placeholder ? placeholder : null}
       onChange={onChange}
       value={value ? value : ""}
       className={className ? className : "custom-input"}
       name={name}
       required={isRequired}
       id={id ? id : null}
-      ref={isRefs ? (isRefs = textInput) : null}
+      ref={isRefs ? isRefs : null}
       autoComplete={autoComplete ? autoComplete : null}
       autoCorrect={autoCorrect ? autoCorrect : null}
       spellCheck={spellCheck ? spellCheck : null}
@@ -64,4 +61,5 @@ const Input = ({
     />
   );
 };
+
 export default Input;
