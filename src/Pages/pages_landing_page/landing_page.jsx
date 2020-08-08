@@ -6,6 +6,7 @@ import ShowCase from "../../Components/component_landing_showcase/ShowCase";
 import ChatHint from "../../Components/ccomponent_landing_hat_hint/Chat_hint";
 import Accomodation from "../../Components/component_accomodation/Accomodation";
 import Contact from "../../Components/components_landing_contact/contact";
+import Footer from "../../Components/component_landing_footer/footer";
 
 const Landing_page = () => {
   const { container, main } = Styles;
@@ -20,6 +21,7 @@ const Landing_page = () => {
   const asideImage = useRef();
   const formBox = useRef();
   const bgImage = useRef();
+  const footer = useRef();
 
   useEffect(() => {
     const onScroll = (e) => {
@@ -87,18 +89,29 @@ const Landing_page = () => {
           "translateX(-65%)";
       }
     };
+    const FooterView = (e) => {
+      if (
+        e.target.documentElement.scrollTop >= 2700 &&
+        e.target.documentElement.scrollTop <= 2800
+      ) {
+        console.log("now");
+        footer.current.style.opacity = "1";
+      }
+    };
 
     window.addEventListener("scroll", onScroll);
     window.addEventListener("scroll", showCaseScroll);
     window.addEventListener("scroll", chatHint);
     window.addEventListener("scroll", AccomodationView);
     window.addEventListener("scroll", ContactView);
+    window.addEventListener("scroll", FooterView);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("scroll", showCaseScroll);
       window.removeEventListener("scroll", chatHint);
       window.removeEventListener("scroll", AccomodationView);
       window.removeEventListener("scroll", ContactView);
+      window.removeEventListener("scroll", FooterView);
     };
   }, []);
   return (
@@ -120,6 +133,7 @@ const Landing_page = () => {
           AccomodationText={AccomodationText}
         />
         <Contact asideImage={asideImage} formBox={formBox} bgImage={bgImage} />
+        <Footer footer={footer} />
       </main>
     </div>
   );

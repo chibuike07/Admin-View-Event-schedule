@@ -56,7 +56,7 @@
   width: inherit;
   margin-left: 5%;
   line-height: 2;
-  animation: show 3s ease-in;
+  animation: show 2s ease-in;
 }
 @keyframes show {
   from {

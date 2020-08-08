@@ -1,0 +1,93 @@
+.footer {
+  width: 100%;
+  height: 20em;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5em;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.social {
+  flex-basis: 15%;
+  padding: 10px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.userIcon {
+  margin-right: 10px;
+}
+.text,
+h4 {
+  color: rgb(0, 102, 102);
+  text-transform: capitalize;
+}
+.media {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.chat_wrapper {
+  flex-basis: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.chatNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  line-height: 2;
+  text-transform: capitalize;
+  width: 100%;
+}
+.product {
+  flex-basis: 15%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  line-height: 2;
+  color: #fff;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.resource {
+  flex-basis: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.resource ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2;
+  margin-top: 30px;
+  color: #fff;
+  text-transform: capitalize;
+  list-style: none;
+  width: 100%;
+}
