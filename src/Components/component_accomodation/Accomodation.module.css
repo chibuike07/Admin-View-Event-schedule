@@ -22,20 +22,16 @@
   height: 150px;
   top: -20%;
   left: 10%;
-  transform: rotateY(180deg);
   opacity: 0;
   transition: opacity 3s ease-in;
   clip-path: polygon(
-    50% 0%,
-    80% 10%,
-    100% 35%,
-    100% 58%,
-    88% 86%,
-    50% 100%,
-    0 94%,
-    22% 83%,
-    0 40%,
-    20% 10%
+    9% 11%,
+    81% 0,
+    96% 45%,
+    70% 73%,
+    83% 100%,
+    61% 84%,
+    22% 72%
   );
 }
 
@@ -45,79 +41,58 @@
   transform: translate(100%, 30%);
   opacity: 0;
   transition: opacity 3s ease-in;
-  clip-path: polygon(
-    50% 0%,
-    80% 10%,
-    100% 35%,
-    83% 81%,
-    100% 91%,
-    50% 100%,
-    20% 90%,
-    0% 70%,
-    0% 35%,
-    20% 10%
-  );
+  clip-path: polygon(0 13%, 81% 0, 96% 45%, 69% 68%, 79% 95%, 56% 70%, 8% 54%);
 }
 
 .figure .third {
   width: 10%;
   height: 100px;
-  transform: rotateY(200deg);
   position: absolute;
   top: -1%;
   left: 35%;
   opacity: 0;
   transition: opacity 3s ease-in;
+
   clip-path: polygon(
-    50% 0%,
-    83% 12%,
-    97% 48%,
-    76% 83%,
-    88% 100%,
-    56% 91%,
-    35% 78%,
-    6% 48%,
-    17% 12%
+    21% 0,
+    100% 0%,
+    99% 65%,
+    75% 75%,
+    39% 100%,
+    50% 75%,
+    11% 48%
   );
 }
 
 .figure .four {
   width: 40%;
-  transform: translate(10vw, 2vh);
+  transform: translate(10vw, -2vh);
   opacity: 0;
   transition: opacity 3s ease-in;
-
   clip-path: polygon(
-    50% 0%,
-    80% 10%,
-    100% 35%,
-    83% 81%,
-    100% 91%,
-    50% 100%,
-    20% 90%,
-    0% 70%,
-    0% 35%,
-    20% 10%
+    12% 33%,
+    85% 24%,
+    93% 51%,
+    75% 75%,
+    85% 88%,
+    50% 75%,
+    20% 67%
   );
 }
 .figure .five {
-  width: 70%;
+  width: 90%;
   height: 100px;
   transform: translate(-10vw, 20vh);
   opacity: 0;
   transition: opacity 3s ease-in;
-
   clip-path: polygon(
-    38% 0,
-    80% 10%,
-    100% 35%,
-    95% 70%,
-    61% 89%,
-    24% 88%,
-    4% 100%,
-    12% 81%,
-    0 65%,
-    0 18%
+    21% 0,
+    100% 0%,
+    99% 65%,
+    75% 75%,
+    39% 100%,
+    50% 75%,
+    11% 48%
   );
 }
 

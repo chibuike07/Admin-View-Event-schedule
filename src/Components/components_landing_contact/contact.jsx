@@ -5,7 +5,7 @@ import CustomInput from "../component_input/Input";
 import CustomButton from "../component_button/Button";
 import CustomImage from "../component_image/Image";
 
-const Contact = () => {
+const Contact = ({ asideImage, formBox, bgImage }) => {
   const { contact_wrapper, formField, text, form, divBg, image, btn } = Styles;
   const [data, setData] = useState({
     name: "",
@@ -24,18 +24,19 @@ const Contact = () => {
   const { name, email, number } = data;
   return (
     <div className={contact_wrapper}>
-      <div className={formField}>
+      <div className={formField} ref={formBox}>
         <div className={text}>
           <h1>contact us</h1>
           <em>group chat</em>
         </div>
-        <form className={form}>
+        <form className={form} onSubmit={handleSubmit}>
           <CustomInput
             type={"text"}
             name={"name"}
             id={"name"}
             placeholder={"name"}
             value={name}
+            isRequired={true}
             onChange={handleChange}
           />
 
@@ -45,6 +46,7 @@ const Contact = () => {
             id={"email"}
             placeholder={"email"}
             value={email}
+            isRequired={true}
             onChange={handleChange}
           />
 
@@ -54,6 +56,7 @@ const Contact = () => {
             id={"number"}
             placeholder={"number"}
             value={number}
+            isRequired={true}
             onChange={handleChange}
           />
           <CustomButton
@@ -61,14 +64,18 @@ const Contact = () => {
             name={"button"}
             id={"number"}
             className={btn}
-            click={handleSubmit}
             backgroundColor={"rgb(0, 102, 102)"}
           />
         </form>
       </div>
-      <div className={divBg}></div>
-      <figure className={image}>
-        <CustomImage src={Image} alt={"human image"} />
+      <div className={divBg} ref={bgImage}></div>
+      <figure className={image} ref={asideImage}>
+        <CustomImage
+          src={Image}
+          alt={"human image"}
+          width={"100%"}
+          height={"25em"}
+        />
       </figure>
     </div>
   );

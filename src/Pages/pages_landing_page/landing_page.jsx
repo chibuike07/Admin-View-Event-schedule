@@ -17,6 +17,9 @@ const Landing_page = () => {
   const cartoonImage = useRef();
   const cartoonOne = useRef();
   const AccomodationText = useRef();
+  const asideImage = useRef();
+  const formBox = useRef();
+  const bgImage = useRef();
 
   useEffect(() => {
     const onScroll = (e) => {
@@ -70,7 +73,18 @@ const Landing_page = () => {
         window.setTimeout(() => {
           cartoonOne.current.children[3].children[0].style.opacity = "1";
         }, 1500);
-        // "translate(-100%)";
+      }
+    };
+
+    const ContactView = (e) => {
+      if (
+        e.target.documentElement.scrollTop >= 2500 &&
+        e.target.documentElement.scrollTop <= 2600
+      ) {
+        formBox.current.style.transform = "translate(20%)";
+        bgImage.current.style.transform = "translateX(-35%)";
+        asideImage.current.children[0].children[0].style.transform =
+          "translateX(-65%)";
       }
     };
 
@@ -78,11 +92,13 @@ const Landing_page = () => {
     window.addEventListener("scroll", showCaseScroll);
     window.addEventListener("scroll", chatHint);
     window.addEventListener("scroll", AccomodationView);
+    window.addEventListener("scroll", ContactView);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("scroll", showCaseScroll);
       window.removeEventListener("scroll", chatHint);
       window.removeEventListener("scroll", AccomodationView);
+      window.removeEventListener("scroll", ContactView);
     };
   }, []);
   return (
@@ -103,7 +119,7 @@ const Landing_page = () => {
           cartoonOne={cartoonOne}
           AccomodationText={AccomodationText}
         />
-        <Contact />
+        <Contact asideImage={asideImage} formBox={formBox} bgImage={bgImage} />
       </main>
     </div>
   );
