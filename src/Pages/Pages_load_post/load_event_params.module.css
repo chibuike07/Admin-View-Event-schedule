@@ -42,9 +42,6 @@
   transform: rotate(360deg);
   cursor: pointer;
 }
-.inp {
-  /* display: none; */
-}
 .div_text {
   width: 50%;
   display: flex;
