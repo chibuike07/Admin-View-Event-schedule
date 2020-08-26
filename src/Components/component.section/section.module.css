@@ -18,23 +18,28 @@
 .div_wrapper > div {
   background-color: rgb(128, 77, 137);
   width: 100%;
+  height: 20em;
   cursor: pointer;
 }
 .div_wrapper button {
   background-color: inherit;
   outline: none;
-  width: 8em;
-  height: 50px;
-  transform: translate(40%);
+  width: 5em;
+  height: 5em;
+  transform: translate(40%, 18em);
   border-radius: 50%;
   border-color: rgb(74, 199, 237);
-  color: #fff;
+  color: #ff0000;
   text-transform: capitalize;
+}
+.div_wrapper button:hover {
+  cursor: pointer;
 }
 .div_img img {
   width: 100%;
   height: 200px;
   clip-path: circle(50% at 40% 20%);
+  margin: 10px;
 }
 
 .div_text {

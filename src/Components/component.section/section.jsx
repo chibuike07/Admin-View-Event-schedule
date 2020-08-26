@@ -2,11 +2,7 @@ import React from "react";
 import Styles from "./section.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCross,
-  faCrosshairs,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const Section = ({ EventData, history }) => {
   const { section, div_wrapper, div_img, div_text } = Styles;
   const { REACT_APP_HOST } = process.env;
