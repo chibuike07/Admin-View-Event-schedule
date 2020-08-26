@@ -24,7 +24,7 @@ const Event = ({ history }) => {
     mainCover.current.children[0].children[0].style.display = "none";
     try {
       await axios
-        .get(`http://${REACT_APP_HOST}/admin_post/event_update/`)
+        .get(`${REACT_APP_HOST}/admin_post/event_update/`)
         .then((res) => setData(res.data));
     } catch (err) {
       console.error(err);

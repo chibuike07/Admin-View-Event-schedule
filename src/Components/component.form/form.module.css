@@ -37,10 +37,11 @@
 }
 .label {
   color: #fff;
-  filter: drop-shadow(10px 20px 13px #000);
+  display: none;
 }
 .file {
-  display: none;
+  filter: drop-shadow(10px 20px 13px #000);
+  color: #fff;
 }
 .button {
   transform: translate(-30%);

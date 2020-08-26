@@ -36,9 +36,14 @@
   transition: clip-path 2s, transform 2s ease-in-out;
   border-radius: 20px;
 }
+
 .div_img :hover {
   clip-path: circle(80% at 54% 50%);
   transform: rotate(360deg);
+  cursor: pointer;
+}
+.inp {
+  /* display: none; */
 }
 .div_text {
   width: 50%;
@@ -46,4 +51,10 @@
   flex-direction: column;
   align-items: center;
   color: yellow;
+}
+
+h2,
+em,
+p:hover {
+  cursor: pointer;
 }

@@ -12,14 +12,14 @@ const Form = () => {
     button,
   } = Styles;
   const forms = useRef();
-  const [state, setState] = useState();
+  const [formData, setFormData] = useState();
   const [data, setData] = useState({
     title: "",
     description: "",
+    file: "",
   });
 
   const { REACT_APP_HOST } = process.env;
-  // console.log("Host", process.env);
   const handleInputChange = ({ target }) => {
     setData({
       ...data,
@@ -32,15 +32,21 @@ const Form = () => {
     formdata.append("file", target.files[0]);
     formdata.append("title", data.title);
     formdata.append("description", data.description);
-    setState(formdata);
+    setFormData(formdata);
+    setData({ ...data, file: target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`http://${REACT_APP_HOST}/admin_post/events`, state);
+    setData({ ...data, title: "", description: "", file: "" });
+    try {
+      await axios.post(`${REACT_APP_HOST}/admin_post/events`, formData);
+    } catch (err) {
+      console.error(err.response);
+    }
   };
   return (
     <div className={form_wrapper}>
-      <form onSubmit={handleSubmit} className={form} ref={forms}>
+      <form onSubmit={handleSubmit} className={form} ref={forms} id="form">
         <input
           type="text"
           className={title}

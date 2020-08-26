@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Styles from "./load_event_params.module.css";
 
 const Load_event_params = ({ match }) => {
   const { REACT_APP_HOST } = process.env;
   const [EventData, setData] = useState(null);
+  const [isVisible, setVisible] = useState(false);
   const { section, div_wrapper, div_img, fileInput, inp, div_text } = Styles;
+  const fileInp = useRef();
 
+  const handleImageClick = () => {
+    setVisible((prev) => prev.isVisible !== isVisible);
+  };
   const updateImage = async ({ target }) => {
     const { id: paramS_id } = match.params;
     console.log("target.value", target.files[0]);
@@ -14,7 +19,7 @@ const Load_event_params = ({ match }) => {
     formData.append("admin_upload", target.files[0]);
     try {
       await axios.put(
-        `http://${REACT_APP_HOST}/admin_post/event_update/${paramS_id}`,
+        `${REACT_APP_HOST}/admin_post/event_update/${paramS_id}`,
         formData
       );
     } catch (error) {
@@ -31,7 +36,7 @@ const Load_event_params = ({ match }) => {
       if (confirm === true) {
         try {
           await axios.put(
-            `http://${REACT_APP_HOST}/admin_post/event_update/${paramS_id}`,
+            `${REACT_APP_HOST}/admin_post/event_update/${paramS_id}`,
             { accessKey, adjustment }
           );
         } catch (error) {
@@ -45,7 +50,7 @@ const Load_event_params = ({ match }) => {
       const { id } = match.params;
       try {
         await axios
-          .get(`http://${REACT_APP_HOST}/admin_post/event_update/${id}`)
+          .get(`${REACT_APP_HOST}/admin_post/event_update/${id}`)
           .then((res) => setData(res.data));
       } catch (err) {
         console.error(err);
@@ -57,16 +62,23 @@ const Load_event_params = ({ match }) => {
     EventData && EventData._id ? (
       <div className={div_wrapper} key={EventData._id}>
         <div className={div_img}>
-          <img src={EventData.image} alt="Event_Image" />
+          <img
+            src={EventData.image}
+            alt="Event_Image"
+            onClick={handleImageClick}
+          />
           <div className={fileInput}>
-            <input
-              type="file"
-              className={inp}
-              id="image"
-              name="admin_upload"
-              accept="image/*"
-              onChange={updateImage}
-            />
+            {isVisible && (
+              <input
+                type="file"
+                className={inp}
+                id="image"
+                name="admin_upload"
+                accept="image/*"
+                onChange={updateImage}
+                ref={fileInp}
+              />
+            )}
           </div>
         </div>
         <div className={div_text}>

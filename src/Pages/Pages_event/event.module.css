@@ -15,11 +15,8 @@
   background-size: cover;
   background-position: bottom right;
   display: none;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   border-top: none;
-  background-color: green;
   height: 40rem;
   overflow-y: scroll;
 }
