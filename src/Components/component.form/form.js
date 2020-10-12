@@ -19,7 +19,9 @@ const Form = () => {
     file: "",
   });
 
-  const { REACT_APP_HOST } = process.env;
+  const { API_URL } = process.env;
+  console.log("object", API_URL);
+  console.log("process.env.HELLO", process.env.HELLO);
   const handleInputChange = ({ target }) => {
     setData({
       ...data,
@@ -39,7 +41,7 @@ const Form = () => {
     e.preventDefault();
     setData({ ...data, title: "", description: "", file: "" });
     try {
-      await axios.post(`${REACT_APP_HOST}/admin_post/events`, formData);
+      await axios.post(`${API_URL}/admin_post/events`, formData);
     } catch (err) {
       console.error(err.response);
     }

@@ -8,7 +8,7 @@ const Event = ({ history }) => {
   const { container, main } = Styles;
   const mainCover = useRef();
   const [data, setData] = useState([]);
-  const { REACT_APP_HOST } = process.env;
+  const { API_URL } = process.env;
 
   const addEvent = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const Event = ({ history }) => {
     mainCover.current.children[0].children[0].style.display = "none";
     try {
       await axios
-        .get(`${REACT_APP_HOST}/admin_post/event_update/`)
+        .get(`${API_URL}/admin_post/event_update/`)
         .then((res) => setData(res.data));
     } catch (err) {
       console.error(err);

@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const Section = ({ EventData, history }) => {
   const { section, div_wrapper, div_img, div_text } = Styles;
-  const { REACT_APP_HOST } = process.env;
+  const { API_URL } = process.env;
   const wrapperClick = (id) => {
     history.push(`/load_event/${id}`);
   };
 
   const handleRemoveEvent = async (id) => {
     try {
-      await axios.delete(`${REACT_APP_HOST}/admin_post/event_update/${id}`);
+      await axios.delete(`${API_URL}/admin_post/event_update/${id}`);
     } catch (err) {
       console.error(err.response);
     }

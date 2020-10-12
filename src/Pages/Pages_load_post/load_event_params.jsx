@@ -3,7 +3,8 @@ import axios from "axios";
 import Styles from "./load_event_params.module.css";
 
 const Load_event_params = ({ match }) => {
-  const { REACT_APP_HOST } = process.env;
+  const { API_URL } = process.env;
+  console.log("REACT_APP_HOST", API_URL);
   const [EventData, setData] = useState(null);
   const [isVisible, setVisible] = useState(false);
   const { section, div_wrapper, div_img, fileInput, inp, div_text } = Styles;
@@ -19,7 +20,7 @@ const Load_event_params = ({ match }) => {
     formData.append("admin_upload", target.files[0]);
     try {
       await axios.put(
-        `${REACT_APP_HOST}/admin_post/event_update/${paramS_id}`,
+        `${API_URL}/admin_post/event_update/${paramS_id}`,
         formData
       );
     } catch (error) {
@@ -35,10 +36,10 @@ const Load_event_params = ({ match }) => {
       let confirm = window.confirm("Go ahead to update");
       if (confirm === true) {
         try {
-          await axios.put(
-            `${REACT_APP_HOST}/admin_post/event_update/${paramS_id}`,
-            { accessKey, adjustment }
-          );
+          await axios.put(`${API_URL}/admin_post/event_update/${paramS_id}`, {
+            accessKey,
+            adjustment,
+          });
         } catch (error) {
           console.error(error);
         }
@@ -50,14 +51,14 @@ const Load_event_params = ({ match }) => {
       const { id } = match.params;
       try {
         await axios
-          .get(`${REACT_APP_HOST}/admin_post/event_update/${id}`)
+          .get(`${API_URL}/admin_post/event_update/${id}`)
           .then((res) => setData(res.data));
       } catch (err) {
         console.error(err);
       }
     };
     fetchTargetedEvent();
-  }, [match, REACT_APP_HOST]);
+  }, [match, API_URL]);
   const data =
     EventData && EventData._id ? (
       <div className={div_wrapper} key={EventData._id}>
