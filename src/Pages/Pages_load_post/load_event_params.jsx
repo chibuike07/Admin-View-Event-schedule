@@ -1,64 +1,96 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Styles from "./load_event_params.module.css";
+import {
+  errorToastify,
+  successToastify,
+} from "../../Components/react_toastify/toastify";
+const Load_event_params = ({ match, history }) => {
+  const { REACT_APP_ENDPOINT } = process.env;
 
-const Load_event_params = ({ match }) => {
-  const { API_URL } = process.env;
-  console.log("REACT_APP_HOST", API_URL);
   const [EventData, setData] = useState(null);
+
   const [isVisible, setVisible] = useState(false);
+
   const { section, div_wrapper, div_img, fileInput, inp, div_text } = Styles;
+
   const fileInp = useRef();
 
   const handleImageClick = () => {
-    setVisible((prev) => prev.isVisible !== isVisible);
+    setVisible((prev) => ({ isVisible: !prev.isVisible }));
   };
+
   const updateImage = async ({ target }) => {
     const { id: paramS_id } = match.params;
-    console.log("target.value", target.files[0]);
+
     const formData = new FormData();
+
     formData.append("admin_upload", target.files[0]);
+
     try {
-      await axios.put(
-        `${API_URL}/admin_post/event_update/${paramS_id}`,
-        formData
-      );
+      await axios
+        .put(
+          `http://localhost:7000/api/v1/admin_post/event_update/${paramS_id}`,
+          formData
+        )
+        .then((res) => {
+          history.push(`/load_event/${paramS_id}`);
+          successToastify(res.data.message);
+          handleImageClick();
+        });
     } catch (error) {
       console.error(error);
     }
-    // setImage({ [target.name]: target.value });
   };
+
   const clickEvent = async ({ target }) => {
     const { id: accessKey } = target;
+
     const { id: paramS_id } = match.params;
+
     let adjustment = window.prompt("adjust your changes", target.innerText);
+
     if (adjustment) {
       let confirm = window.confirm("Go ahead to update");
+
       if (confirm === true) {
-        try {
-          await axios.put(`${API_URL}/admin_post/event_update/${paramS_id}`, {
-            accessKey,
-            adjustment,
+        await axios
+          .put(
+            `http://localhost:7000/api/v1/admin_post/event_update/${paramS_id}`,
+            {
+              accessKey,
+              adjustment,
+            }
+          )
+          .then((res) => {
+            history.push(`/load_event/${paramS_id}`);
+            successToastify(res.data.message);
+          })
+          .catch((error) => {
+            if (error.response === undefined) {
+              return;
+            }
+
+            errorToastify(error.response.data.message);
           });
-        } catch (error) {
-          console.error(error);
-        }
       }
     }
   };
+
   useEffect(() => {
     const fetchTargetedEvent = async () => {
       const { id } = match.params;
+
       try {
         await axios
-          .get(`${API_URL}/admin_post/event_update/${id}`)
-          .then((res) => setData(res.data));
+          .get(`http://localhost:7000/api/v1/admin_post/event_update/${id}`)
+          .then((res) => setData(res.data.data));
       } catch (err) {
         console.error(err);
       }
     };
     fetchTargetedEvent();
-  }, [match, API_URL]);
+  }, [match, history]);
   const data =
     EventData && EventData._id ? (
       <div className={div_wrapper} key={EventData._id}>

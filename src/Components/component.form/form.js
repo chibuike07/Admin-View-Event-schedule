@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import Styles from "./form.module.css";
 import axios from "axios";
+
 const Form = () => {
   const {
     form_wrapper,
@@ -12,16 +13,15 @@ const Form = () => {
     button,
   } = Styles;
   const forms = useRef();
-  const [formData, setFormData] = useState();
+  const [fileValue, setFileValue] = useState("");
   const [data, setData] = useState({
     title: "",
     description: "",
     file: "",
   });
 
-  const { API_URL } = process.env;
-  console.log("object", API_URL);
-  console.log("process.env.HELLO", process.env.HELLO);
+  // const { REACT_APP_ENDPOINT } = process.env;
+
   const handleInputChange = ({ target }) => {
     setData({
       ...data,
@@ -30,25 +30,42 @@ const Form = () => {
   };
 
   const handleFileChange = ({ target }) => {
-    const formdata = new FormData();
-    formdata.append("file", target.files[0]);
-    formdata.append("title", data.title);
-    formdata.append("description", data.description);
-    setFormData(formdata);
-    setData({ ...data, file: target.value });
+    setData({ ...data, file: target.files[0] });
+    setFileValue(target.value);
+    // setFormData(formdata);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setData({ ...data, title: "", description: "", file: "" });
-    try {
-      await axios.post(`${API_URL}/admin_post/events`, formData);
-    } catch (err) {
-      console.error(err.response);
-    }
+    const formData = new FormData();
+    formData.append("file", data.file);
+    // formData.append("title", data.title);
+    // formData.append("description", data.description);
+
+    console.log("data.file", data.file);
+    await axios
+      .post("http://localhost:7000/api/v1/admin_post/events", formData)
+      .then((res) => {
+        console.log("res.data", res.data);
+        setData({ ...data, title: "", description: "", file: "" });
+      })
+      .catch((err) => {
+        if (err.response === undefined) {
+          return;
+        }
+        console.error(err.response);
+      });
   };
+
   return (
     <div className={form_wrapper}>
-      <form onSubmit={handleSubmit} className={form} ref={forms} id="form">
+      <form
+        onSubmit={handleSubmit}
+        className={form}
+        ref={forms}
+        id="form"
+        encType="multipart/form-data"
+      >
         <input
           type="text"
           className={title}
@@ -73,9 +90,9 @@ const Form = () => {
           className={file}
           id="file"
           name="file"
-          accept="image/*"
+          // accept="image/*"
           required={true}
-          value={data.file}
+          value={fileValue}
           onChange={handleFileChange}
         />
         <input type="submit" className={button} />

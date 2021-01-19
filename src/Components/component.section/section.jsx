@@ -5,21 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const Section = ({ EventData, history }) => {
   const { section, div_wrapper, div_img, div_text } = Styles;
-  const { API_URL } = process.env;
+  const { REACT_APP_ENDPOINT } = process.env;
+
   const wrapperClick = (id) => {
     history.push(`/load_event/${id}`);
   };
 
   const handleRemoveEvent = async (id) => {
     try {
-      await axios.delete(`${API_URL}/admin_post/event_update/${id}`);
+      await axios.delete(
+        `http://localhost:7000/api/v1/admin_post/event_update/${id}`
+      );
+
+      history.push("/");
     } catch (err) {
       console.error(err.response);
     }
   };
+
   const data =
-    EventData &&
-    EventData.map((value) => {
+    EventData.data &&
+    EventData.data.map((value) => {
       return value ? (
         <div className={div_wrapper} key={value._id}>
           <div onClick={() => wrapperClick(value._id)}>
@@ -47,7 +53,7 @@ const Section = ({ EventData, history }) => {
         <p>no event yet</p>
       );
     });
-  console.log("data", EventData);
+
   return (
     <div>
       <section className={section}>{data}</section>

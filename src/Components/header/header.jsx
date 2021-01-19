@@ -14,7 +14,7 @@ const header = ({ viewEvent, addEvent }) => {
     add_post,
     view_post,
   } = Styles;
-  console.log("process.env.REACT_APP_URL", process.env.REACT_APP_API_KEY);
+
   return (
     <div>
       <header className={header}>
